@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:36:24 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/01/18 16:15:36 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:46:49 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,6 @@ static int	ft_wcount(char const *s, char c)
 		i++;
 	}
 	return (j);
-}
-
-static char	**ft_freeall(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-	return (NULL);
 }
 
 static char	**ft_tab(char **tab, const char *s, char c)
@@ -83,11 +69,3 @@ char	**ft_split(char const *s, char c)
 	tab = ft_tab(tab, s, c);
 	return (tab);
 }
-
-// int main()
-// {
-// 	char	**tab;
-// 	int 	i;
-// 	tab = ft_split("bonjour comment ca va", ' ');
-// 	
-// }

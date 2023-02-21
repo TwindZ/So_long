@@ -50,7 +50,8 @@ SRC =	ft_isalnum.c	\
 		ft_putnbr.c			\
 		ft_putnbr_un.c		\
 		ft_putnbr_hex.c		\
-
+		ft_freeall.c		\
+		
 OBJS = $(SRC:%.c=%.o)
 
 CFLAGS = -Wall -Wextra -Werror

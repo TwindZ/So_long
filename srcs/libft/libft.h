@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:55:14 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/15 15:24:03 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:40:50 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*get_next_line(int fd);
 
 char	**ft_split(char const *s, char c);
+char	**ft_freeall(char **tab);
 
 #endif

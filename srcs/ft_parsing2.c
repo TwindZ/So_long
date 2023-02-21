@@ -6,15 +6,24 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 13:01:03 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/16 15:16:27 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:48:26 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int ft_ber(char *path)
+t_map	*ft_map_init(t_map *map)
 {
-	
+	map->col = 0;
+	map->collect = 0;
+	map->exit = 0;
+	map->line = 0;
+	map->map_a = NULL;
+	map->player = 0;
+	map->rectangle = 0;
+	map->totallen = 0;
+	map->walled = 0;
+	return (map);
 }
 
 char	*ft_read_map(int fd)
@@ -45,21 +54,21 @@ char	*ft_read_map(int fd)
 	return (file);
 }
 
-static int ft_col(char *file)
+static int	ft_col(char *file)
 {
 	int	i;
 
 	i = 0;
-	while(file[i] != '\n')
+	while (file[i] != '\n')
 		i++;
 	return (i);
 }
 
-t_map	ft_map_param(char *file, t_map *map)
+t_map	*ft_map_param(char *file, t_map *map)
 {
 	int	i;
 
-	i = 0;	
+	i = 0;
 	while (file[i])
 	{
 		if (file[i] == 'P')
@@ -75,5 +84,5 @@ t_map	ft_map_param(char *file, t_map *map)
 	map->line += 1;
 	map->col = ft_col(file);
 	map->totallen = i;
-	return (*map);
+	return (map);
 }
