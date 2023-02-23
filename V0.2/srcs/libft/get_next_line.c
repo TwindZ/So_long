@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emman <emman@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:19:49 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/22 15:06:21 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/23 10:10:54 by emman            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ static char	*ft_line(char *stack)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	char static	*stack;
+	static char	*stack;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);

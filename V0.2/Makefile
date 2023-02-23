@@ -14,7 +14,7 @@ CC = gcc
 all: $(NAME)
 
 run:
-	./so_long ./maps/map01.ber
+	./So_long ./maps/map01.ber
 
 $(NAME): $(OBJS)
 	$(MAKE) -C ./srcs/libft
