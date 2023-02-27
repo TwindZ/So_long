@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emman <emman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:41:54 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/23 18:26:33 by emman            ###   ########.fr       */
+/*   Updated: 2023/02/27 17:14:26 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,18 @@
 # define EXIT "./visual/rock2x64blackhole.png"
 
 //-------------------------------MESAGE--------------------------------------//
-# define VALID "Map valide ! :)"
-# define ERVALID "Map non valide :("
-# define ERPLAYERMSS "Pas de joueur présent sur la map"
-# define ERPLAYERCNT "Map solo, trop de joueurs présents"
-# define EREXIT "Pas de sortrie présente sur la map"
-# define ERCOLLECT "Pas de collectible sur la map"
-# define ERFLOODCOL "Collectible(s) inatteignable(s)"
-# define ERFLOODEXT "Sortie inatteignable"
+# define VALID "------SUCCES------\nMap valide ! :)\n"
+# define ERVALID "------ERROR-------\nMap non valide :(\n"
+# define ERPLAYERMSS "Pas de joueur présent sur la map\n"
+# define ERPLAYERCNT "Map solo, trop de joueurs présents\n"
+# define EREXITMSS "Pas de sortie présente sur la map\n"
+# define EREXITMR "Trop de sorties sur la map\n"
+# define ERCOLLECT "Pas de collectible sur la map\n"
+# define ERFLOODCOL "Collectible(s) inatteignable(s)\n"
+# define ERFLOODEXT "Sortie inatteignable\n"
+# define ERFLOOD "Map non terminable\n"
+# define ERRECT "Map non rectangulaire\n"
+# define ERWALL "Map non encadré\n"
 
 //------------------------------INCLUDE--------------------------------------//
 # include "./libft/libft.h"
@@ -48,6 +52,7 @@ typedef struct	s_flood
 	char	**map;
 	int		collect;
 	int		exit;
+	int		done;
 }				t_flood;
 
 typedef struct	s_player
@@ -72,5 +77,9 @@ typedef struct	s_data
 	t_flood			flood;
 
 }				t_data;
+
+void	ft_validate(t_data *data);
+void	ft_init_map(char *path, t_data *data);
+void	ft_map_data(t_data *data);
 
 #endif
