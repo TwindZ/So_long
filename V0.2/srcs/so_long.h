@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:41:54 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/27 17:14:26 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:26:00 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@
 //# include "../MLX42/include/MLX42/MLX42.h"
 
 //-------------------------------STRUCTS-------------------------------------//
-typedef struct	s_flood
+typedef struct s_flood
 {
 	char	**map;
 	int		collect;
@@ -55,20 +55,20 @@ typedef struct	s_flood
 	int		done;
 }				t_flood;
 
-typedef struct	s_player
+typedef struct s_player
 {
 	int		count;
 	int		pos_x;
 	int		pos_y;
 }				t_player;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	int				line;
 	int				col;
 	int				exit;
 	int				collect;
-	int				wrongChar;
+	int				wrongchar;
 	int				rectangle;
 	int				walled;
 	int				valid;

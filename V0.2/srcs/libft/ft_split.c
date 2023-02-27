@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:36:24 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/22 11:13:40 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:27:51 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 	tab = (char **)malloc((ft_wcount(s, c) + 1) * (sizeof(char *)));
 	if (!tab)

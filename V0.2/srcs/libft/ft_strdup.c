@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:38:17 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/22 11:13:34 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:28:04 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 	void	*str;
 
 	str = malloc((sizeof(char)) * ft_strlen(s) + 1);
-	if(!str)
+	if (!str)
 		return (NULL);
 	ft_memcpy(str, s, ft_strlen(s) + 1);
 	return (str);
