@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:41:54 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/27 17:26:00 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:35:49 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,11 @@ typedef struct s_data
 
 }				t_data;
 
-void	ft_validate(t_data *data);
+void	ft_init_data(t_data *data);
 void	ft_init_map(char *path, t_data *data);
 void	ft_map_data(t_data *data);
+void	ft_map_size(char *path, t_data *data);
+void	ft_message(t_data *data);
+void	ft_validate(t_data *data);
 
 #endif
