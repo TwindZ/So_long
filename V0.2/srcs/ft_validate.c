@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:08:41 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/27 17:26:11 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/28 10:57:18 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	ft_flood_cpy(t_data *data)
 	int	i;
 
 	i = 0;
-	data->flood.map = ft_calloc((data->col + 1), sizeof(char *));
+	data->flood.map = ft_calloc((data->line + 1), sizeof(char *));
 	while (data->map[i])
 	{
-		data->flood.map[i] = ft_calloc(data->col + 1, sizeof(char));
+		data->flood.map[i] = ft_calloc((data->col + 1), sizeof(char));
 		ft_memcpy(data->flood.map[i], data->map[i], data->col + 1);
 		i++;
 	}
@@ -30,13 +30,12 @@ void	ft_floodfill(int x, int y, t_data *data)
 {
 	if (x < 0 || y < 0 || x > data->col - 1 || y > data->line - 1)
 		return ;
-	else if (data->flood.map[y][x] == 'X' || data->flood.map[y][x] == '1')
+	if (data->flood.map[y][x] == 'X' || data->flood.map[y][x] == '1')
 		return ;
-	else if (data->flood.map[y][x] == 'C')
+	if (data->flood.map[y][x] == 'C')
 		data->flood.collect += 1;
-	else if (data->flood.map[y][x] == 'E')
+	if (data->flood.map[y][x] == 'E')
 		data->flood.exit += 1;
-	else
 	data->flood.map[y][x] = 'X';
 	ft_floodfill(x + 1, y, data);
 	ft_floodfill(x - 1, y, data);

@@ -6,11 +6,12 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:51:40 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/27 17:33:25 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/28 09:48:31 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
 
 int	main(int argc, char **argv)
 {
@@ -29,6 +30,7 @@ int	main(int argc, char **argv)
 	ft_map_data(data);
 	ft_validate(data);
 	ft_message(data);
+	//ft_render();
 	//-------------------TESTING AREA----------------------------------------//
 	// ft_printf("Nombre de lignes = %d\n", data->line);
 	// ft_printf("Nombre de collones avec \\n = %d\n", data->col);

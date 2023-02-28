@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:41:54 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/28 09:01:42 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/28 09:55:12 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,18 @@
 
 //-------------------------------MESAGE--------------------------------------//
 # define VALID "------SUCCES------\nMap valide ! :)\n"
-# define ERVALID "------ERROR-------\nMap non valide :(\n"
-# define ERPLAYERMSS "Pas de joueur présent sur la map\n"
-# define ERPLAYERCNT "Map solo, trop de joueurs présents\n"
-# define EREXITMSS "Pas de sortie présente sur la map\n"
-# define EREXITMR "Trop de sorties sur la map\n"
-# define ERCOLLECT "Pas de collectible sur la map\n"
-# define ERFLOODCOL "Collectible(s) inatteignable(s)\n"
-# define ERFLOODEXT "Sortie inatteignable\n"
-# define ERFLOOD "Map non terminable\n"
-# define ERRECT "Map non rectangulaire\n"
-# define ERWALL "Map non encadré\n"
+# define ERVALID "------ERROR-------\nMap non valide ! :(\n"
+# define ERPLAYERMSS "Pas de joueur présent sur la map.\n"
+# define ERPLAYERCNT "Map solo, trop de joueurs présents.\n"
+# define EREXITMSS "Pas de sortie présente sur la map.\n"
+# define EREXITMR "Trop de sorties sur la map.\n"
+# define ERCOLLECT "Pas de collectible sur la map.\n"
+# define ERFLOODCOL "Collectible(s) inatteignable(s).\n"
+# define ERFLOODEXT "Sortie inatteignable.\n"
+# define ERFLOOD "Map non terminable.\n"
+# define ERRECT "Map non rectangulaire.\n"
+# define ERWALL "Map non encadré.\n"
+# define ERWRONGC "Caratère(s) invalide(s) présent(s) sur la map.\n"
 
 //------------------------------INCLUDE--------------------------------------//
 # include "./libft/libft.h"

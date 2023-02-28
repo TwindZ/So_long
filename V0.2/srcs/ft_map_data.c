@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:13:49 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/27 17:26:31 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/28 10:57:32 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_init_map(char *path, t_data *data)
 		if (data->map[i][0] == '\n')
 			data->rectangle = 1;
 		if (data->map[i][ft_strlen(data->map[i]) - 1] == '\n')
-			data->map[i][ft_strlen(data->map[i]) - 1] = '\0';
+		data->map[i][ft_strlen(data->map[i]) - 1] = '\0';
 		i++;
 	}
 	close(fd);
@@ -51,9 +51,9 @@ void	ft_map_data_util(int x, int y, t_data *data)
 		;
 	else
 		data->wrongchar++;
-	if (data->map[0][x] != '1' || data->map[y][0] != '1' ||
+	if ((data->map[0][x] != '1' || data->map[y][0] != '1' ||
 		data->map[data->line - 1][x] != '1' ||
-		data->map[y][data->col - 1] != '1')
+		data->map[y][data->col - 1] != '1') && data->rectangle == 0)
 		data->walled = 1;
 }
 
@@ -79,6 +79,7 @@ void	ft_map_data(t_data *data)
 	int	y;
 	int	x;
 
+	ft_is_rec (data);
 	y = 0;
 	while (data->map[y])
 	{
@@ -90,5 +91,5 @@ void	ft_map_data(t_data *data)
 		}
 		y++;
 	}
-	ft_is_rec (data);
+	
 }

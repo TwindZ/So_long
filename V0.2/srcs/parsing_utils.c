@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 09:04:23 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/28 09:04:24 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/28 10:05:44 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,6 @@ void	ft_message(t_data *data)
 		ft_printf(ERFLOODEXT);
 	if (data->flood.collect != data->collect && data->flood.done == 0)
 		ft_printf(ERFLOODCOL);
+	if (data->wrongchar != 0)
+		ft_printf(ERWRONGC);
 }
