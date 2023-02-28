@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:41:54 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/27 17:35:49 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/02/28 09:01:42 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ typedef struct s_data
 
 }				t_data;
 
+//-------------------------------PROTOTYPAGES--------------------------------//
 void	ft_init_data(t_data *data);
 void	ft_init_map(char *path, t_data *data);
 void	ft_map_data(t_data *data);

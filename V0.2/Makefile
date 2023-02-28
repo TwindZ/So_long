@@ -8,7 +8,7 @@ LIBFT	:= ./srcs/libft/libft.a
 SRCS	:=	./srcs/main.c			\
 			./srcs/ft_validate.c \
 			./srcs/ft_map_data.c	\
-			./srcs/so_long_utils.c	\
+			./srcs/parsing_utils.c	\
 
 OBJS = $(SRC:%.c=%.o)
 
