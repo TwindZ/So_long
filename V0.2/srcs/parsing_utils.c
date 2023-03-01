@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 09:04:23 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/28 10:05:44 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:07:36 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ void	ft_init_data(t_data *data)
 	data->valid = 0;
 	data->map = NULL;
 	data->player.count = 0;
-	data->player.pos_x = 0;
-	data->player.pos_y = 0;
+	data->player.direct = 'S';
+	data->enemy.count = 0;
+	data->enemy.direct = 'S';
 	data->flood.map = NULL;
 	data->flood.collect = 0;
 	data->flood.exit = 0;
@@ -52,7 +53,13 @@ void	ft_map_size(char *path, t_data *data)
 	close(fd);
 	data->line = i;
 }
-
+void	ft_message2(t_data *data)
+{
+	if(data->col > 40)
+		ft_printf(ERCOLMAX);
+	if(data->line > 22)
+		ft_printf(ERLINEMAX);
+}
 void	ft_message(t_data *data)
 {
 	if (data->valid == 1)
@@ -79,4 +86,5 @@ void	ft_message(t_data *data)
 		ft_printf(ERFLOODCOL);
 	if (data->wrongchar != 0)
 		ft_printf(ERWRONGC);
+	ft_message2(data);
 }

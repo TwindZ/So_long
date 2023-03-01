@@ -17,11 +17,11 @@ CC = gcc
 all: $(NAME)
 
 run:
-	./So_long ./maps/map01.ber
+	./So_long ./maps/map02.ber
 
 $(NAME): $(OBJS)
 	$(MAKE) -C ./srcs/libft
-	$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(SRCS) $(LIBS) $(LIBFT) -o $(NAME)
 	make clean
 	
 debug: $(NAME) $(SRC)

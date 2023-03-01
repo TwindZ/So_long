@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:13:49 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/02/28 11:04:44 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:59:47 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	ft_map_data_util(int x, int y, t_data *data)
 		data->exit++;
 	else if (data->map[y][x] == 'C')
 		data->collect++;
+	else if (data->map[y][x] == 'A')
+		data->enemy.count++;
 	else if (data->map[y][x] == '1' || data->map[y][x] == '0')
 		;
 	else
