@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*   so_long_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 09:04:23 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/01 18:07:36 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:32:54 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ void	ft_init_data(t_data *data)
 	data->walled = 0;
 	data->valid = 0;
 	data->map = NULL;
-	data->player.count = 0;
+	data->playercount = 0;
+	data->enemycount = 0;
 	data->player.direct = 'S';
-	data->enemy.count = 0;
-	data->enemy.direct = 'S';
 	data->flood.map = NULL;
 	data->flood.collect = 0;
 	data->flood.exit = 0;
 	data->flood.done = 1;
+	data->steps = 0;
+	data->enemydelay = 0;
 }
 
 void	ft_map_size(char *path, t_data *data)
@@ -72,9 +73,9 @@ void	ft_message(t_data *data)
 		ft_printf(EREXITMR);
 	if (data->exit < 1)
 		ft_printf(EREXITMSS);
-	if (data->player.count > 1)
+	if (data->playercount > 1)
 		ft_printf(ERPLAYERCNT);
-	if (data->player.count < 1)
+	if (data->playercount < 1)
 		ft_printf(ERPLAYERMSS);
 	if (data->rectangle > 0)
 		ft_printf(ERRECT);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_data.c                                      :+:      :+:    :+:   */
+/*   map_data.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:13:49 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/01 16:59:47 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/02 16:28:36 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_map_data_util(int x, int y, t_data *data)
 {
 	if (data->map[y][x] == 'P')
 	{
-		data->player.count++;
+		data->playercount++;
 		data->player.pos_x = x;
 		data->player.pos_y = y;
 	}
@@ -48,7 +48,11 @@ void	ft_map_data_util(int x, int y, t_data *data)
 	else if (data->map[y][x] == 'C')
 		data->collect++;
 	else if (data->map[y][x] == 'A')
-		data->enemy.count++;
+	{
+		data->enemycount++;
+		data->enemy.pos_x = x;
+		data->enemy.pos_y = y;
+	}
 	else if (data->map[y][x] == '1' || data->map[y][x] == '0')
 		;
 	else

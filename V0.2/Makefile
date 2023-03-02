@@ -6,9 +6,12 @@ HEADERS	:= -I ./include -I $(LIBMLX)/include
 LIBS	:= $(LIBMLX)/build/libmlx42.a -lglfw -L "/Users/$(USER)/.brew/opt/glfw/lib/"
 LIBFT	:= ./srcs/libft/libft.a
 SRCS	:=	./srcs/main.c			\
-			./srcs/ft_validate.c \
-			./srcs/ft_map_data.c	\
-			./srcs/parsing_utils.c	\
+			./srcs/validate.c \
+			./srcs/map_data.c	\
+			./srcs/so_long_utils.c	\
+			./srcs/game.c			\
+			./srcs/image_utils.c	\
+			./srcs/move.c
 
 OBJS = $(SRC:%.c=%.o)
 

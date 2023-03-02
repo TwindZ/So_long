@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:41:54 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/01 18:07:06 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:41:59 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,12 @@
 # define ERLINEMAX "Carte trop longue (Max 22 lignes)\n"
 
 //------------------------------INCLUDE--------------------------------------//
+# include "../MLX42/include/MLX42/MLX42.h"
 # include "./libft/libft.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "../MLX42/include/MLX42/MLX42.h"
-
 //-------------------------------STRUCTS-------------------------------------//
 typedef struct s_flood
 {
@@ -69,7 +68,6 @@ typedef struct s_flood
 
 typedef struct s_character
 {
-	int		count;
 	char	direct;
 	int		pos_x;
 	int		pos_y;
@@ -112,6 +110,11 @@ typedef struct s_img
 typedef struct s_data
 {
 	mlx_t			*mlx;
+	int				delay;
+	int				enemydelay;
+	int				dificulty;
+	int				ramdom;
+	int				rendercount;
 	int				steps;
 	int				line;
 	int				col;
@@ -121,12 +124,15 @@ typedef struct s_data
 	int				rectangle;
 	int				walled;
 	int				valid;
+	int				playercount;
+	int				enemycount;
 	char			**map;
 	t_character		player;
 	t_character		enemy;
 	t_flood			flood;
 	t_texture		texture;
 	t_img			image;
+	t_img			old_image;
 }				t_data;
 
 //-------------------------------PROTOTYPAGES--------------------------------//
@@ -136,5 +142,16 @@ void	ft_map_data(t_data *data);
 void	ft_map_size(char *path, t_data *data);
 void	ft_message(t_data *data);
 void	ft_validate(t_data *data);
+void	ft_render(void *param);
+void	ft_del_old_img(t_data *data);
+void	ft_text_img(t_data *data);
+void	ft_load_texture(t_data *data);
+void	ft_free_texture(t_data *data);
+void	ft_img_to_win(t_data *data);
+void	ft_key_detect(mlx_key_data_t keydata, void *param);
+void	ft_screen_steps(t_data *data);
+void	ft_quit(t_data *data);
+
+mlx_image_t	*ft_e_direct(t_data *data);
 
 #endif

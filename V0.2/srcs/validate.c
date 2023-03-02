@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_validate.c                                      :+:      :+:    :+:   */
+/*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:08:41 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/01 18:41:50 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:09:37 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ void	ft_floodfill(int x, int y, t_data *data)
 
 void	ft_validate(t_data *data)
 {
-	if (data->exit != 1 || data->player.count != 1 || data->collect < 1
+	if (data->exit != 1 || data->playercount != 1 || data->collect < 1
 		|| data->rectangle != 0 || data->wrongchar != 0 || data->walled != 0
-		|| data->enemy.count > 1 || data->col > 40 || data->line > 22)
+		|| data->enemycount > 1 || data->col > 40 || data->line > 22)
 		data->valid = 1;
 	if (data->valid == 0)
 	{
