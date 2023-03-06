@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 09:04:23 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/02 17:32:54 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:30:46 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ void	ft_init_data(t_data *data)
 	data->flood.done = 1;
 	data->steps = 0;
 	data->enemydelay = 0;
+	data->collectindex = 0;
+	data->wallindex = 0;
+	data->wallindexdir = 0;
+	data->rendercount = 0;
 }
 
 void	ft_map_size(char *path, t_data *data)
@@ -54,13 +58,15 @@ void	ft_map_size(char *path, t_data *data)
 	close(fd);
 	data->line = i;
 }
+
 void	ft_message2(t_data *data)
 {
-	if(data->col > 40)
+	if (data->col > 40)
 		ft_printf(ERCOLMAX);
-	if(data->line > 22)
+	if (data->line > 22)
 		ft_printf(ERLINEMAX);
 }
+
 void	ft_message(t_data *data)
 {
 	if (data->valid == 1)

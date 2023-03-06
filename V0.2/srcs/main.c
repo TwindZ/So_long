@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:51:40 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/02 17:43:27 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:14:58 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_game(t_data *data)
 {
 	data->mlx = mlx_init(data->col * IMG_SIZE,
-			data->line * IMG_SIZE, PRGNAME, false);
+			data->line * IMG_SIZE + 50, PRGNAME, false);
 	ft_load_texture(data);
 	mlx_key_hook(data->mlx, &ft_key_detect, data);
 	mlx_loop_hook(data->mlx, &ft_render, data);
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 {
 	t_data		*data;
 
-	if (argc != 3)
+	if (argc != 2)
 		return (ft_printf("Argument invalide !"));
 	if (ft_strncmp(&argv[1][ft_strlen(argv[1]) - 4], ".ber", 4))
 		return (ft_printf("Format de carte invalide !"));
@@ -55,12 +55,11 @@ int	main(int argc, char **argv)
 	ft_printf("Map flood exit = %d\n", data->flood.exit);
 	ft_printf("Map flood collect = %d\n", data->flood.collect);
 	//-------------------TESTING AREA----------------------------------------//
-	if(data->valid == 0)
+	if (data->valid == 0)
 	{
 		ft_game(data);
 		mlx_terminate(data->mlx);
 	}
 	ft_freeall(data->map);
 	free(data);
-	return (0);
 }

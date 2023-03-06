@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:41:54 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/02 17:41:59 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:31:41 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,33 @@
 # define IMG_SIZE 64
 
 //-------------------------------PATHS---------------------------------------//
-# define WALL "./visual/LavaX64.png"
+# define WALL1 "./visual/wall/LavaX64_1.png"
+# define WALL2 "./visual/wall/LavaX64_2.png"
+# define WALL3 "./visual/wall/LavaX64_3.png"
+# define WALL4 "./visual/wall/LavaX64_4.png"
+# define WALL5 "./visual/wall/LavaX64_5.png"
+# define WALL6 "./visual/wall/LavaX64_6.png"
+# define WALL7 "./visual/wall/LavaX64_7.png"
+# define WALL8 "./visual/wall/LavaX64_8.png"
+# define WALL9 "./visual/wall/LavaX64_9.png"
 # define FLOOR "./visual/FloorX64.png"
-# define PLAYERFRONT "./visual/DevFrontX64.png"
-# define PLAYERBACK "./visual/DevBackX64.png"
-# define PLAYERLEFT "./visual/DevLeftX64.png"
-# define PLAYERRIGHT "./visual/DevRightX64.png"
-# define COLLECT "./visual/SoulX64.png"
+# define PLAYERFRONT "./visual/devil/DevFrontX64.png"
+# define PLAYERBACK "./visual/devil/DevBackX64.png"
+# define PLAYERLEFT "./visual/devil/DevLeftX64.png"
+# define PLAYERRIGHT "./visual/devil/DevRightX64.png"
+# define COLLECT1 "./visual/soul/SoulX64_1.png"
+# define COLLECT2 "./visual/soul/SoulX64_2.png"
+# define COLLECT3 "./visual/soul/SoulX64_3.png"
+# define COLLECT4 "./visual/soul/SoulX64_4.png"
+# define COLLECT5 "./visual/soul/SoulX64_5.png"
+# define COLLECT6 "./visual/soul/SoulX64_6.png"
+# define COLLECT7 "./visual/soul/SoulX64_7.png"
 # define EXITOPEN "./visual/OpenPortX64.png"
 # define EXITCLOSE "./visual/ClosePortX64.png"
-# define ENEMYFRONT "./visual/AngelFrontX64.png"
-# define ENEMYBACK "./visual/AngelBackX64.png"
-# define ENEMYLEFT "./visual/AngelLeftX64.png"
-# define ENEMYRIGHT "./visual/AngelRightX64.png"
+# define ENEMYFRONT "./visual/angel/AngelFrontX64.png"
+# define ENEMYBACK "./visual/angel/AngelBackX64.png"
+# define ENEMYLEFT "./visual/angel/AngelLeftX64.png"
+# define ENEMYRIGHT "./visual/angel/AngelRightX64.png"
 
 //-------------------------------MESSAGES------------------------------------//
 # define VALID "------SUCCÈS------\nCarte valide ! :)\n"
@@ -76,12 +90,12 @@ typedef struct s_character
 typedef struct s_texture
 {
 	mlx_texture_t	*floor;
-	mlx_texture_t	*wall;
+	mlx_texture_t	*wall[10];
+	mlx_texture_t	*collect[8];
 	mlx_texture_t	*playerfront;
 	mlx_texture_t	*playerback;
 	mlx_texture_t	*playerleft;
 	mlx_texture_t	*playerright;
-	mlx_texture_t	*collect;
 	mlx_texture_t	*exitclose;
 	mlx_texture_t	*exitopen;
 	mlx_texture_t	*enemyfront;
@@ -105,6 +119,9 @@ typedef struct s_img
 	mlx_image_t		*enemyback;
 	mlx_image_t		*enemyleft;
 	mlx_image_t		*enemyright;
+	mlx_image_t		*screenstr1;
+	mlx_image_t		*screenstr2;
+	mlx_image_t		*screenstr3;
 }				t_img;
 
 typedef struct s_data
@@ -113,13 +130,16 @@ typedef struct s_data
 	int				delay;
 	int				enemydelay;
 	int				dificulty;
+	int				collect;
+	int				collectindex;
+	int				wallindex;
+	int				wallindexdir;
 	int				ramdom;
 	int				rendercount;
 	int				steps;
 	int				line;
 	int				col;
 	int				exit;
-	int				collect;
 	int				wrongchar;
 	int				rectangle;
 	int				walled;
@@ -136,21 +156,24 @@ typedef struct s_data
 }				t_data;
 
 //-------------------------------PROTOTYPAGES--------------------------------//
-void	ft_init_data(t_data *data);
-void	ft_init_map(char *path, t_data *data);
-void	ft_map_data(t_data *data);
-void	ft_map_size(char *path, t_data *data);
-void	ft_message(t_data *data);
-void	ft_validate(t_data *data);
-void	ft_render(void *param);
-void	ft_del_old_img(t_data *data);
-void	ft_text_img(t_data *data);
-void	ft_load_texture(t_data *data);
-void	ft_free_texture(t_data *data);
-void	ft_img_to_win(t_data *data);
-void	ft_key_detect(mlx_key_data_t keydata, void *param);
-void	ft_screen_steps(t_data *data);
-void	ft_quit(t_data *data);
+void		ft_init_data(t_data *data);
+void		ft_init_map(char *path, t_data *data);
+void		ft_map_data(t_data *data);
+void		ft_map_size(char *path, t_data *data);
+void		ft_message(t_data *data);
+void		ft_validate(t_data *data);
+void		ft_render(void *param);
+void		ft_del_old_img(t_data *data);
+void		ft_text_img(t_data *data);
+void		ft_load_texture(t_data *data);
+void		ft_free_texture(t_data *data);
+void		ft_img_to_win(t_data *data);
+void		ft_key_detect(mlx_key_data_t keydata, void *param);
+void		ft_screen_steps(t_data *data);
+void		ft_quit(t_data *data);
+void		ft_enemy_rand(t_data *data);
+void		ft_go_and_back(t_data *data);
+void		ft_animation(t_data *data);
 
 mlx_image_t	*ft_e_direct(t_data *data);
 

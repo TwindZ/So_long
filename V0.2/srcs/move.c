@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:03:28 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/02 18:00:15 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/06 15:43:17 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_move(int new_x, int new_y, t_data *data, char c)
 		{	
 			data->collect--;
 			ft_printf("Âmes à collecter : %d\n", data->collect);
+			data->enemydelay = 0;
 		}
 		data->map[new_y][new_x] = 'P';
 		data->map[data->player.pos_y][data->player.pos_x] = '0';
@@ -77,7 +78,7 @@ void	ft_key_detect(mlx_key_data_t keydata, void *param)
 			ft_move(data->player.pos_x + 1, data->player.pos_y, data, 'E');
 		else if (keydata.key == MLX_KEY_ESCAPE)
 		{
-			ft_printf("Vous avex quitter la partie\n");
+			ft_printf("Vous avez quitté la partie\n");
 			ft_quit(data);
 		}	
 	}

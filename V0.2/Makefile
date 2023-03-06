@@ -11,7 +11,9 @@ SRCS	:=	./srcs/main.c			\
 			./srcs/so_long_utils.c	\
 			./srcs/game.c			\
 			./srcs/image_utils.c	\
-			./srcs/move.c
+			./srcs/move.c			\
+			./srcs/enemy.c			\
+			./srcs/animation.c
 
 OBJS = $(SRC:%.c=%.o)
 
