@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:13:49 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/07 11:18:04 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:40:24 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_init_map(char *path, t_data *data)
 	int		i;
 
 	data->map = ft_calloc((data->line + 1), (sizeof(char *)));
-	if(!data->map)
+	if (!data->map)
 		exit(1);
 	i = 0;
 	fd = open(path, O_RDONLY);

@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:08:41 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/07 16:55:40 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:40:13 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ void	ft_validate(t_data *data)
 		if (data->collect != data->flood.collect
 			|| data->exit != data->flood.exit)
 			data->valid = 1;
-		ft_freeall(data->flood.map);	
+		ft_freeall(data->flood.map);
 	}
 }

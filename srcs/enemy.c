@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:15:34 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/07 11:31:25 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:22:33 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,13 @@ void	ft_enemy_move(int new_x, int new_y, char direct, t_data *data)
 	}
 	else if (data->map[new_y][new_x] == 'P')
 		ft_death(data);
-	// else if(data->map[new_y][new_x] == '1')
-	// {
-	// ft_enemy_rand(data);
-	// }
 }
 
 void	ft_enemy_rand(t_data *data)
 {
 	int	random;
 
-	data->dificulty = (data->collect * 5) + 1;
+	data->dificulty = (data->collect * 2) + 1;
 	if (data->enemydelay == data->dificulty)
 	{
 		data->enemydelay = 0;

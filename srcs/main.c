@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:51:40 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/07 15:04:20 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:44:10 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_game(t_data *data)
 {
 	data->mlx = mlx_init(data->col * IMG_SIZE,
 			data->line * IMG_SIZE + 50, PRGNAME, false);
-	if(!data->mlx)
+	if (!data->mlx)
 		exit(1);
 	ft_load_texture(data);
 	mlx_key_hook(data->mlx, &ft_key_detect, data);

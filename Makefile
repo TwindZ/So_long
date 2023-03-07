@@ -5,9 +5,9 @@ LIBMLX	:= ./MLX42
 HEADERS	:= -I ./include -I $(LIBMLX)/include
 LIBS	:= $(LIBMLX)/build/libmlx42.a -lglfw -L "/Users/$(USER)/.brew/opt/glfw/lib/"
 LIBFT	:= ./srcs/libft/libft.a
-SRC	:=	./srcs/main.c			\
-			./srcs/validate.c \
-			./srcs/map_data.c	\
+SRC	:=		./srcs/main.c			\
+			./srcs/validate.c 		\
+			./srcs/map_data.c		\
 			./srcs/so_long_utils.c	\
 			./srcs/game.c			\
 			./srcs/image_utils.c	\
@@ -24,7 +24,7 @@ CC = gcc
 all: $(NAME)
 
 run:
-	./So_long ./maps/map02.ber
+	./So_long ./maps/map04.ber
 
 $(NAME): $(OBJS)
 	$(MAKE) -C ./srcs/libft
