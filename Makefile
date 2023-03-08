@@ -24,8 +24,8 @@ CC = gcc
 all: mlx $(NAME) 
 
 mlx: dep
-	(cd ./mlx42/ && cmake -B build)
-	make -C ./mlx42/build/
+	(cd ./MLX42/ && cmake -B build)
+	make -C ./MLX42/build/
 
 dep:
 	brew install glfw

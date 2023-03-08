@@ -6,7 +6,7 @@
 /*   By: emlamoth <emlamoth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:41:54 by emlamoth          #+#    #+#             */
-/*   Updated: 2023/03/07 13:09:13 by emlamoth         ###   ########.fr       */
+/*   Updated: 2023/03/08 11:43:24 by emlamoth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 //-------------------------------PARAMETRES----------------------------------//
-# define PRGNAME "Soul_long"
+# define PRGNAME "Soul Long Keeper"
 # define BUFFER_SIZE 128
 # define IMG_SIZE 64
 
