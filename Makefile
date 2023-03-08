@@ -21,10 +21,15 @@ OBJS := $(OBJS:./srcs/%=$(OBJS_DIR)%)
 
 CC = gcc
 
-all: $(NAME)
+all: mlx $(NAME) 
 
-run:
-	./So_long ./maps/map04.ber
+mlx: dep
+	(cd ./mlx42/ && cmake -B build)
+	make -C ./mlx42/build/
+
+dep:
+	brew install glfw
+	brew install cmake
 
 $(NAME): $(OBJS)
 	$(MAKE) -C ./srcs/libft
@@ -37,12 +42,16 @@ $(OBJS_DIR)%.o: ./srcs/%.c
 
 clean:
 	$(MAKE) clean -C ./srcs/libft
+	$(MAKE) clean -C ./MLX42/build
 	rm -rf $(OBJS_DIR)
 
 fclean: clean
 	$(MAKE) fclean -C ./srcs/libft
+	rm -rf ./MLX42/build
 	rm -f $(NAME)
+
+bonus: all
 
 re: fclean all
 
-.PHONY: all clean fclean debug comp re
+.PHONY: all clean fclean bonus re
